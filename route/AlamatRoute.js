@@ -51,12 +51,14 @@ router.post('/api/alamats', Auth, function(req, res, next) {
     })
     .then((results)=>{
       res.status (201).json ({
+        status: true,
         msg: 'Success Create',
         data: results,
       });
     })
     .catch (err => {
       res.status (500).json ({
+        status: false,
         msg: 'Failed Create',
         detail: err,
       });

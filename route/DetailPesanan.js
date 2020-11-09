@@ -46,11 +46,16 @@ router.post('/api/detail/:id', function(req, res, next) {
     .catch(next)
 });
 
-router.put('/:id', function(req, res, next) {
-    DetailPesanan.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
-      if (err) return next(err);
-      res.json(post);
-    });
+router.put('/api/details/:id', function(req, res, next) {
+  const { Is_Done }= req.body
+    DetailPesanan.update(req.params.id,{Is_Done: true}, {multi: true})
+    .then((result) =>{
+      res.status(201).json({
+        success : true,
+        data: result
+      })
+    })
+    .catch(next)
 });
 
 router.delete('/:id', function(req, res, next) {

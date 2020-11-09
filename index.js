@@ -21,6 +21,7 @@ app.use(cors())
 
 // Route
 // app.use(auth)
+
 app.use(register)
 app.use(alamat)
 app.use(kategori)
@@ -31,7 +32,7 @@ app.use(pesanan)
 app.use(caraousell)
 
 
-// app.get('/', (req, res, next) => {
-//     res.send('Hello World')
-// })
+app.get('/', (req, res, next) => {
+    res.send('Hello World')
+})
 app.listen(3000)

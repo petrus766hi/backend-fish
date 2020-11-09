@@ -6,6 +6,7 @@ var DetailSchema = new mongoose.Schema({
     Nama_Produk :{type :String},
     Harga_Produk : {type: Number},
     Gambar : {type: String},
-    Jumlah: {type: Number}
+    Jumlah: {type: Number},
+    Is_Done: {type: Boolean, default: false}
 });
 module.exports = mongoose.model('DetailPesanan', DetailSchema);
